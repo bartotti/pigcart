@@ -7,7 +7,7 @@ export default function CartItem({ cart }) {
 
   return (
     <div>
-      <h2>Cart:</h2>
+      <p>--------------------------</p>
       {cart && cart.length > 0 ? (
         <>
           {cart.map((item, index) => (
@@ -15,6 +15,7 @@ export default function CartItem({ cart }) {
               <p>{item.name}</p>
               <p>Qty: {item.qty}</p>
               <p>Price: ${item.price.toFixed(2)}</p>
+              <p>--------------------------</p>
             </div>
           ))}
           <p>Total: ${totalAmount.toFixed(2)}</p>

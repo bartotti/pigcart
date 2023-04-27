@@ -98,10 +98,15 @@ export default function MainScreen() {
                   min="1"
                   max="10"
                 />
-                <button onClick={addToCart}>Add to Cart</button>
+                <button onClick={addToCart} className="select-add-button">
+                  Add to Cart
+                </button>
               </>
             ) : (
-              <button onClick={() => setSelectedProduct(product)}>
+              <button
+                onClick={() => setSelectedProduct(product)}
+                className="select-add-button"
+              >
                 Select
               </button>
             )}

@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import CartItem from "./cartItem";
+import NavBar from "./navBar";
+
 export const products = [
   {
     name: "plate 1",
@@ -60,12 +62,15 @@ export default function MainScreen() {
     }
   }
 
-  function toggleCart() {
-    setShowCart(prevShowCart => !prevShowCart);
-  }
-
+  // function toggleCart() {
+  //   setShowCart(prevShowCart => !prevShowCart);
+  // }
+  const toggleCart = () => {
+    setShowCart(!showCart);
+  };
   return (
     <div>
+      <NavBar />
       <div className="cart-button" onClick={toggleCart}>
         Open/Close Cart ({cart.length})
         {showCart && <CartItem cart={cart} onClose={toggleCart} />}
@@ -84,7 +89,7 @@ export default function MainScreen() {
               style={{ cursor: "pointer", maxWidth: "100%" }}
             />
             <h2>{product.name}</h2>
-            <p>Price: ${product.price.toFixed(2)}</p>
+            <p>${product.price.toFixed(2)}</p>
             <p>{product.description}</p>
             {product === selectedProduct ? (
               <>

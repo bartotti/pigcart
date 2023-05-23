@@ -92,7 +92,6 @@ export default function MainScreen() {
       "cart",
       JSON.stringify(cart.filter(item => item.name !== itemId))
     );
-    console.log("imclick");
   }
 
   const toggleCart = () => {
